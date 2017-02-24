@@ -4,7 +4,7 @@ app.factory('FriendService', ['$http', '$q','$rootScope', function($http, $q,$ro
 	
 	console.log("FriendService...")
 	
-	var BASE_URL='http://localhost:8060/CollabBackEnd/'
+	var BASE_URL='http://localhost:8070/CollabBackEnd'
     return {
          
 		getMyFriends: function() {

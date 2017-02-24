@@ -16,7 +16,7 @@ app
 							var self = this;
 							self.Blog = {
 								userid : '',
-								id : '',
+							//	id : '',
 								title: '',
 								description: '',
 								status : '',
@@ -66,7 +66,7 @@ app
 							self.reset = function() {
 								self.Blog = {
 										userid : '',
-										id : '',
+										// id : '',
 										title: '',
 										description: '',
 										status : '',

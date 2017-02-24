@@ -20,7 +20,18 @@ app.config(function($routeProvider) {
     templateUrl : 'c_blog/create_blog.html',
     controller  : 'BlogController'
   })
-
+  .when('/logout', {
+    templateUrl : 'pages/logout.html',
+    controller  : 'UserController'
+  })
+  .when('/search_job', {
+    templateUrl : 'c_job/search_job.html',
+    controller  : 'JobController'
+  })
+ .when('/post_job', {
+    templateUrl : 'c_job/post_job.html',
+    controller  : 'JobController'
+  })
   .when('/about', {
     templateUrl : 'pages/about.html',
     controller  : 'AboutController'
@@ -57,6 +68,22 @@ app.run(function ($rootScope, $location, $cookieStore, $http){
 	alert("You are not logged and so you can't do this operation")
 	$location.path('/login');
 	}
+	else //logged in
+	{
+	
+	 var role = $rootScope.currentUser.role;
+	 var userRestrictedPage = $.inArray($location.path(), ["/postJob"]) == 0;
+	 
+	 if(userRestrictedPage && role!='Admin' )
+		 {
+		 
+		  alert("You can not do this operation as you are logged as : " + role )
+		   $location.path('/login');
+		 }
+	     
+	
+	}
+
 	});
 
 	//keep user logged in after page refresh

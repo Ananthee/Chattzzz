@@ -22,6 +22,21 @@ private String userid;
 	private String password;
 	private String address;
 	private String Role;
+	
+	
+	public Userdetails(String userid, String username, String email, String contact, char is_online, String password,
+			String address, String Role) {
+		super();
+		this.userid = userid;
+		this.username = username;
+		this.email = email;
+		this.contact = contact;
+		this.is_online = is_online;
+		this.password = password;
+		this.address = address;
+		this.Role = Role;
+	}
+
 	public char getIs_online() {
 		return is_online;
 	}
@@ -67,8 +82,8 @@ private String userid;
 	public String getRole() {
 		return Role;
 	}
-	public void setRole(String role) {
-		Role = role;
+	public void setRole(String Role) {
+		this.Role = Role;
 	}
 		
 	public String getUsername() {

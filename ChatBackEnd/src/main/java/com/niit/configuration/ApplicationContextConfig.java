@@ -21,6 +21,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import com.niit.model.Blog;
 import com.niit.model.Friend;
+import com.niit.model.Job;
 import com.niit.model.Userdetails;
 
 
@@ -33,7 +34,8 @@ public class ApplicationContextConfig {
 	public DataSource getDataSource() {
 	    DriverManagerDataSource dataSource = new DriverManagerDataSource();
 	    dataSource.setDriverClassName("org.h2.Driver");
-	    dataSource.setUrl("jdbc:h2:tcp://localhost/~/Backendproject2");
+	    dataSource.setUrl("jdbc:h2:tcp://localhost/~/project2");
+	   // dataSource.setUrl("jdbc:h2:tcp://localhost/~/Backendproject2");
 	    dataSource.setUsername("sa");
 	    dataSource.setPassword("");
 	    System.out.println("creating datasource");
@@ -59,6 +61,7 @@ public class ApplicationContextConfig {
 	    sessionBuilder.addAnnotatedClasses(Userdetails.class);
 	    sessionBuilder.addAnnotatedClasses(Blog.class);
 	    sessionBuilder.addAnnotatedClasses(Friend.class);
+	    sessionBuilder.addAnnotatedClasses(Job.class);
 	    return sessionBuilder.buildSessionFactory();
 	}
 	@Autowired(required=true)

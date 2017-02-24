@@ -100,7 +100,7 @@ public class UserController {
 			log.debug("-->User does not exist");
 			userdetails = new Userdetails();
 			userdetails.setErrorcode("404");
-			userdetails.setErrormessage("Blog not found");
+			userdetails.setErrormessage("user do not found");
 			return new ResponseEntity<Userdetails>(userdetails,HttpStatus.NOT_FOUND);
 		}
 		userdetailsDAO.delete(id);
@@ -135,7 +135,7 @@ public class UserController {
 		return new ResponseEntity<Userdetails>(userdetails,HttpStatus.OK);
 	}
 	
-	@RequestMapping(value="/user/logout/",method=RequestMethod.POST)
+	@RequestMapping(value="/user/logout/",method=RequestMethod.GET)
 	public ResponseEntity<Userdetails> logout(HttpSession session)
 	{
 		userdetails= userdetailsDAO.authenticate(userdetails.getUserid(), userdetails.getPassword());
@@ -143,5 +143,7 @@ public class UserController {
 		userdetailsDAO.setOffLine(userdetails.getUserid());
 		session.invalidate();
 		return new ResponseEntity<Userdetails>(userdetails,HttpStatus.OK);
+		
+		
 	}
 }

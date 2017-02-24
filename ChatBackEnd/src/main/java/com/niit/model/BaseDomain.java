@@ -12,7 +12,15 @@ public class BaseDomain {
 	
 	@Transient
 	private String errormessage;
+	
+	
 
+	/*public BaseDomain(String errorcode, String errormessage) {
+		super();
+		this.errorcode = errorcode;
+		this.errormessage = errormessage;
+	}
+*/
 	public String getErrorcode() {
 		return errorcode;
 	}

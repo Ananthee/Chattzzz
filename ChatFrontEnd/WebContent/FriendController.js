@@ -4,7 +4,9 @@ app.controller('FriendController', ['UserService','$scope', 'FriendService','$lo
    '$rootScope',function(UserService,$scope, FriendService,$location,$routeParams,$rootScope) {
 	console.log("FriendController...")
           var self = this;
-          self.Friend={id:'',userid:'',friendid:'',status:''};
+          self.Friend={
+        		// initialization
+        		  	  id:'',userid:'',friendid:'',status:'',errorMessage:''};
           self.friends=[];
           
           self.Userdetails = {
@@ -92,6 +94,4 @@ app.controller('FriendController', ['UserService','$scope', 'FriendService','$lo
  
      
  
-      }]);/**
- * 
- */
+      }]);

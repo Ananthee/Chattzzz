@@ -124,9 +124,9 @@
     </div>
     <ul class="nav navbar-nav">
       <li><a href="#/">Home</a></li>
-      <li><a href="#">About Us</a></li>
+      <li><a href="#/about">About Us</a></li>
        <li class="dropdown">
-       <a class="dropdown-toggle" data-toggle="dropdown"  href="#/Blog">Friend<span class="caret"></span></a>
+       <a class="dropdown-toggle" data-toggle="dropdown"  href="#">Friend<span class="caret"></span></a>
       <ul class="dropdown-menu">
         <li><a href="#/viewfriend">View Friend list</a></li>
        <li><a href="#/search_friend">Search Friends</a>        </li>
@@ -140,10 +140,11 @@
       </ul>
     </li>
     <li class="dropdown">
-       <a class="dropdown-toggle" data-toggle="dropdown"  href="#/Blog">Job<span class="caret"></span></a>
+       <a class="dropdown-toggle" data-toggle="dropdown"  href="#">Job<span class="caret"></span></a>
       <ul class="dropdown-menu">
-        <li><a href="#">View Job</a></li>
-       <li><a href="#">Search Job</a>        </li>
+        <li><a href="#/job">View Job</a></li>
+       <li><a href="#/search_job">Search Job</a> </li>
+       <li><a href="#/post_job">Post Job</a> </li>
       </ul>
     </li>
     <li class="dropdown">
@@ -158,7 +159,7 @@
     <ul class="nav navbar-nav navbar-right">
    
 <!--       <li><a href="#/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
-      <li><a href="#/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li><a href="#" ng-click="ctrl.logout()"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
      </div>
     
     </ul>
@@ -182,4 +183,7 @@
 <script src="c_chat/ChatService.js"></script>
 <script src="c_chat/ChatController.js"></script>
 <script src="FriendService.js"></script>
+<script src="c_job/JobController.js"></script>
+<script src="c_job/JobService.js"></script>
+
 </html>
